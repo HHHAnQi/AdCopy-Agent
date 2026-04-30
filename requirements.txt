@@ -1,0 +1,22 @@
+# Core
+torch
+transformers
+datasets
+accelerate
+peft
+trl
+sentencepiece
+
+# Data processing
+pandas
+tqdm
+
+# API service
+fastapi
+uvicorn
+pydantic
+
+# Utilities
+pyyaml
+scikit-learn
+

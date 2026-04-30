@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.env
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+.cursor/
+
+# Local large/external directories
+LLaMA-Factory/
+Qwen/
+
+# Data
+data/AdvertiseGen/
+data/raw/
+data/processed/*.jsonl
+data/processed/*.json
+*.jsonl
+
+# Outputs
+outputs/models/
+outputs/candidates/
+outputs/dpo/
+outputs/eval_reports/*.json
+outputs/eval_reports/*.csv
+logs/
+
+# Model files
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.gguf
+
+# Cache
+.cache/
+huggingface/
+hf_cache/
