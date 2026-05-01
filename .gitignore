@@ -8,31 +8,31 @@ venv/
 env/
 .env
 
-# macOS
+# System / IDE
 .DS_Store
-
-# IDE
 .vscode/
 .idea/
 .cursor/
 
-# Local large/external directories
+# External repos / model dirs
 LLaMA-Factory/
 Qwen/
 
-# Data
+# Raw and processed data
 data/AdvertiseGen/
 data/raw/
 data/processed/*.jsonl
 data/processed/*.json
-*.jsonl
+data/dataset_info.json
 
-# Outputs
+# Large generated outputs
 outputs/models/
 outputs/candidates/
 outputs/dpo/
+outputs/eval_reports/*.jsonl
 outputs/eval_reports/*.json
-outputs/eval_reports/*.csv
+
+# Keep CSV/MD reports if copied into docs/
 logs/
 
 # Model files
@@ -43,7 +43,19 @@ logs/
 *.ckpt
 *.gguf
 
+# Large artifacts
+artifacts/adapters/*.tar.gz
+
 # Cache
 .cache/
 huggingface/
 hf_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Runtime evaluation outputs
+outputs/eval_reports/*.csv
+outputs/eval_reports/*.json
+outputs/eval_reports/*.jsonl

@@ -1,211 +1,210 @@
-# 电商广告文案生成与偏好对齐系统
+# LLM Post-Training System for E-commerce Ad Copy Generation
 
-基于 Qwen2.5 + LoRA + Rule-based DPO 的中文电商广告生成项目，覆盖数据清洗、SFT 数据构造、DPO 偏好对齐样本构造、规则评估、训练配置与 FastAPI 服务 Demo。
+A Qwen2.5-based post-training system for Chinese e-commerce advertisement copy generation.
 
-## 项目阶段说明
+This project builds a complete LLM application and post-training pipeline, including:
 
-### 阶段一：本地工程与数据构造阶段（已完成）
+- AdvertiseGen data preprocessing
+- SFT dataset construction
+- Rule-based DPO preference pair construction
+- Qwen2.5-7B QLoRA SFT
+- DPO preference alignment
+- Base / SFT / DPO generation evaluation
+- FastAPI demo service
 
-- AdvertiseGen 数据解析
-- SFT 数据构造
-- DPO prompt pool 构造
-- rule-based negative candidates
-- DPO pair 构造与过滤
-- `dataset_report`
-- mock eval
-- FastAPI demo
+## 1. Project Motivation
 
-### 阶段二：模型后训练阶段（待 GPU 环境）
+E-commerce ad copy generation requires more than fluent text generation. The model should:
 
-- Qwen2.5-7B-Instruct QLoRA SFT
-- 使用 SFT 模型生成真实 candidates
-- 构造 model-generated DPO v2
-- DPO 偏好对齐
-- Base/SFT/DPO 三模型评估
+- Cover key product attributes
+- Avoid unsupported claims
+- Avoid exaggerated or forbidden expressions
+- Produce concise and attractive copy
+- Follow business-specific style constraints
 
-## 1) 项目背景与业务价值
+This project explores how SFT and DPO can improve a base LLM for product attribute-to-ad-copy generation.
 
-电商广告文案通常要求同时满足「卖点突出、表达自然、避免违规、属性一致」四类目标。纯 SFT 往往能学到语气与结构，但在事实一致性、违规词控制和偏好对齐上存在不足。本项目通过 **SFT + DPO** 两阶段流程，提升文案质量与可控性：
+## 2. Pipeline
 
-- 提高属性覆盖率，减少“写偏题”；
-- 降低违规夸大表达；
-- 利用偏好对比样本强化“好文案 > 差文案”的排序能力；
-- 提供可复现的数据管线和可部署 API 入口。
-
-## 2) 数据集说明
-
-- 数据集：`shibing624/AdvertiseGen`
-- 本地路径：
-  - `data/AdvertiseGen/train.json`
-  - `data/AdvertiseGen/dev.json`
-- 常见字段：
-  - `content`：商品属性 kv 串（例如 `类型#裙*风格#通勤*图案#纯色`）
-  - `summary`：广告文案
-
-## 3) 数据处理流程
-
-完整链路如下（按执行顺序）：
-
-1. `src/parse_kv.py`  
-   解析 AdvertiseGen 的 `content` 字段，生成结构化属性并格式化为自然语言输入。
-
-2. `src/prepare_sft.py`  
-   完成清洗、去重、数据划分，生成：
-   - `sft_train.jsonl`
-   - `sft_val.jsonl`
-   - `dpo_prompt_pool.jsonl`
-   - `dev_eval.jsonl`
-   - `final_test.jsonl`
-
-3. `src/generate_candidates.py`  
-   从 `dpo_prompt_pool.jsonl` 为每个 prompt 生成候选文案（支持 `mock` / `transformers`）。
-
-4. `src/build_dpo_pairs.py`  
-   用 `rule_score` 对候选打分，构造 DPO pair（训练版 + 分析版）。
-
-5. `src/inspect_dpo.py`  
-   抽样检查 DPO 数据质量，查看 source 分布与异常样本。
-
-6. `src/dataset_report.py`  
-   生成全项目数据统计报告（JSON + Markdown）。
-
-## 4) 当前数据规模统计
-
-- `sft_train`: 11000
-- `sft_val`: 1000
-- `dpo_prompt_pool`: 6000
-- `dpo_train`: 10540
-- `dpo_val`: 2635
-- `dev_eval`: 500
-- `final_test`: 500
-- `DPO meta pairs`: 13175
-- `SFT output 平均长度`: 109.31
-- `DPO chosen_score avg`: 3.1729
-- `DPO rejected_score avg`: 2.1538
-- `chosen_score <= rejected_score`: 0
-
-> 说明：当前评估结果来自 `mock eval` 流程，用于验证工程链路与数据质量，不代表真实模型训练后的线上效果。
-
-## 5) SFT 数据格式示例
-
-```json
-{
-  "instruction": "请根据商品属性生成一段中文电商广告文案，要求突出核心卖点，表达自然，有购买吸引力，不得编造未提供的信息。",
-  "input": "商品属性：类型=上衣；材质=牛仔布；颜色=白色；风格=简约。",
-  "output": "白色牛仔上衣清爽百搭，简约风格耐看不挑人，日常通勤都能轻松驾驭。"
-}
+```text
+AdvertiseGen raw data
+    ↓
+Attribute parsing and text cleaning
+    ↓
+SFT dataset construction
+    ↓
+Rule-based negative candidate generation
+    ↓
+DPO preference pair construction
+    ↓
+Qwen2.5-7B QLoRA SFT
+    ↓
+DPO alignment from SFT adapter
+    ↓
+Base / SFT / DPO evaluation
+    ↓
+FastAPI demo
 ```
 
-## 6) DPO 数据格式示例
+## 3. Data
 
-训练版（用于 LLaMA-Factory）：
+Processed data statistics:
 
-```json
-{
-  "instruction": "请根据商品属性生成一段中文电商广告文案，要求突出核心卖点，表达自然，有购买吸引力，不得编造未提供的信息。",
-  "input": "商品属性：类型=上衣；材质=牛仔布；颜色=白色；风格=简约。",
-  "chosen": "白色牛仔上衣清爽百搭，简约气质自然耐看，面料挺括有型，日常穿搭省心。",
-  "rejected": "这款产品全网第一，效果100%，必买神级单品，品质永久 guaranteed。"
-}
+| Split           |   Size |
+| --------------- | -----: |
+| SFT train       | 11,000 |
+| SFT validation  |  1,000 |
+| DPO prompt pool |  6,000 |
+| DPO train       | 10,758 |
+| DPO validation  |  2,689 |
+| Dev eval        |    500 |
+| Final test      |    269 |
+
+The DPO v1 data contains three types of rejected responses:
+
+* `exaggerated`: exaggerated or forbidden expressions
+* `generic`: generic template-like copy
+* `weak`: weakened copy with missing selling points
+
+## 4. Training
+
+### SFT
+
+Base model:
+
+```text
+Qwen/Qwen2.5-7B-Instruct
 ```
 
-分析版（用于统计分析）在 `outputs/dpo/dpo_pairs_with_meta.jsonl`，额外包含：
-- `chosen_source`
-- `rejected_source`
-- `chosen_score`
-- `rejected_score`
+Training method:
 
-## 7) DPO 构造策略（当前版本）
+```text
+QLoRA / LoRA SFT
+```
 
-- `chosen`：优先 `gold`，且需满足无禁用词、无属性冲突、长度合格；
-- `rejected`：来自 `exaggerated / generic / weak`；
-- 严格过滤：
-  - `chosen_score <= rejected_score` 直接丢弃；
-  - `chosen_score - rejected_score < 0.5` 丢弃；
-  - `chosen == rejected` 丢弃；
-  - `chosen` 含禁用词丢弃；
-- 目标：保证偏好方向明确，降低噪声 pair。
+SFT summary:
 
-## 8) 本地运行命令
+| Metric     |     Value |
+| ---------- | --------: |
+| Epochs     |         2 |
+| Steps      |     2,750 |
+| Train loss |    2.5848 |
+| Runtime    | 7,045.76s |
 
-### 数据准备
+### DPO
+
+DPO is trained from the SFT adapter using the rule-based DPO v1 preference dataset.
+
+DPO summary:
+
+| Metric     |     Value |
+| ---------- | --------: |
+| Epochs     |         1 |
+| Steps      |       625 |
+| Train loss |    0.0156 |
+| Runtime    | 3,247.98s |
+
+## 5. Evaluation
+
+Final-test size: 269 samples.
+
+| Model                    | Coverage | Forbidden Count | Repetition Ratio | Avg Length | Rule Score |
+| ------------------------ | --------: | --------------: | ---------------: | ---------: | ---------: |
+| Base Qwen2.5-7B-Instruct |   0.9260 |          0.0186 |           0.0238 |   191.9963 |     2.4888 |
+| SFT                      |   0.8568 |          0.0000 |           0.0140 |    81.9814 |     3.0921 |
+| SFT + DPO                |   0.8766 |          0.0000 |           0.0215 |    60.2119 |     3.0177 |
+
+## 6. Interpretation
+
+SFT is the main source of improvement. It improves the overall rule score, removes forbidden expressions, reduces repetition, and shortens the output length.
+
+DPO v1 improves attribute coverage compared with SFT and keeps forbidden expressions at zero, but the overall rule score is slightly lower than SFT. This suggests that rule-based DPO v1 makes the model more concise and conservative. Future work should construct DPO v2 using model-generated candidates and LLM-as-Judge preference labels.
+
+## 7. Repository Structure
+
+```text
+app/                     FastAPI demo
+configs/                 LLaMA-Factory configs
+scripts/                 Training scripts
+src/                     Data processing, generation, and evaluation scripts
+docs/                    Experiment summary and comparison samples
+docs/results/            Evaluation CSV and dataset report
+```
+
+## 8. Reproduce Data Processing
 
 ```bash
+python src/inspect_data.py
 python src/prepare_sft.py
-python src/generate_candidates.py --mode mock --input_file data/processed/dpo_prompt_pool.jsonl --output_file outputs/candidates/candidates.jsonl
-python src/build_dpo_pairs.py
-python src/inspect_dpo.py --input_file outputs/dpo/dpo_pairs_with_meta.jsonl --num_samples 10
+python src/generate_candidates.py \
+  --input_file data/processed/dpo_prompt_pool.jsonl \
+  --output_file outputs/candidates/candidates.jsonl \
+  --mode mock \
+  --max_samples 6000 \
+  --num_candidates 7
+python src/build_dpo_pairs.py \
+  --input_file outputs/candidates/candidates.jsonl \
+  --train_output data/processed/dpo_train.jsonl \
+  --val_output data/processed/dpo_val.jsonl \
+  --scored_output outputs/dpo/dpo_scored_candidates.jsonl
 python src/dataset_report.py
 ```
 
-### 评估
+## 9. Training
 
 ```bash
-python src/run_eval.py --mode mock --input_file data/processed/final_test.jsonl
+bash scripts/train_sft.sh
+bash scripts/train_dpo.sh
 ```
 
-> 注意：这里是 `mock eval`，用于流程联调与指标检查，不代表真实 Base/SFT/DPO 模型效果。
-
-## 9) 训练配置说明
-
-- SFT 配置：`configs/sft_qwen2_5_7b_lora.yaml`
-- DPO 配置：`configs/dpo_qwen2_5_7b_lora.yaml`
-- 训练脚本：
-  - `scripts/train_sft.sh`
-  - `scripts/train_dpo.sh`
-- 数据集映射：`configs/llamafactory_dataset_info.json`
-
-> 注意：LLaMA-Factory 默认读取其目录下的 `data/dataset_info.json`。请将本项目的 `configs/llamafactory_dataset_info.json` 复制到对应位置，或按实际安装方式调整。
-
-## 10) FastAPI Demo 使用方式
-
-启动：
+## 10. Generation and Evaluation
 
 ```bash
-uvicorn app.main:app --reload --port 8000
+python src/generate_model_outputs.py \
+  --model_type base \
+  --base_model Qwen/Qwen2.5-7B-Instruct \
+  --input_file data/processed/final_test.jsonl \
+  --output_file outputs/eval_reports/base_generations.jsonl \
+  --max_samples 269
+
+python src/generate_model_outputs.py \
+  --model_type sft \
+  --base_model Qwen/Qwen2.5-7B-Instruct \
+  --adapter_path outputs/models/qwen2_5_7b_adgen_sft \
+  --input_file data/processed/final_test.jsonl \
+  --output_file outputs/eval_reports/sft_generations.jsonl \
+  --max_samples 269
+
+python src/generate_model_outputs.py \
+  --model_type dpo \
+  --base_model Qwen/Qwen2.5-7B-Instruct \
+  --adapter_path outputs/models/qwen2_5_7b_adgen_dpo \
+  --input_file data/processed/final_test.jsonl \
+  --output_file outputs/eval_reports/dpo_generations.jsonl \
+  --max_samples 269
+
+python src/eval_generation_file.py \
+  --generation_file outputs/eval_reports/base_generations.jsonl \
+  --output_prefix base
+
+python src/eval_generation_file.py \
+  --generation_file outputs/eval_reports/sft_generations.jsonl \
+  --output_prefix sft
+
+python src/eval_generation_file.py \
+  --generation_file outputs/eval_reports/dpo_generations.jsonl \
+  --output_prefix dpo
 ```
 
-健康检查：
+## 11. Limitations
 
-```bash
-curl -X GET "http://127.0.0.1:8000/health"
-```
+* DPO v1 uses rule-based negative responses rather than human preference labels.
+* Rule-based evaluation cannot fully capture ad-copy attractiveness and business conversion.
+* DPO v1 improves coverage but does not outperform SFT on the overall rule score.
 
-生成文案：
+## 12. Future Work
 
-```bash
-curl -X POST "http://127.0.0.1:8000/generate_ad" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "attributes": {
-      "类型": "上衣",
-      "材质": "牛仔布",
-      "颜色": "白色",
-      "风格": "简约"
-    },
-    "num_candidates": 3
-  }'
-```
-
-## 11) 当前限制
-
-- 当前 DPO 方案是 **rule-based DPO v1**，打分与偏好构造主要依赖规则；
-- 候选质量仍受 mock/基础生成策略影响，真实上限受候选生成模型能力约束；
-- 事实一致性冲突检测为关键词规则，后续可进一步升级为语义级校验。
-
-## 12) 后续升级方向
-
-- 使用 SFT 模型生成更高质量候选（替代纯规则扰动）；
-- 引入 **LLM-as-Judge** 做偏好打分，结合规则形成混合评估；
-- 加入多维 reward（真实性、可读性、转化导向、品牌语气）；
-- 形成线上 A/B 评估闭环。
-
-## 13) 简历写法建议
-
-可参考以下表述：
-
-- 负责搭建“电商广告文案生成与偏好对齐系统”，基于 Qwen2.5 + LoRA 实现 SFT 与 DPO 两阶段训练流程。
-- 从零构建 AdvertiseGen 数据管线，完成清洗、去重、SFT/DPO 数据构造与自动评估报告，沉淀可复现脚本体系。
-- 设计 rule-based 偏好构造策略（事实冲突、违规词、覆盖率、长度、重复度等），产出万级高质量 DPO 样本并实现严格质量过滤。
-- 提供 FastAPI 推理服务 Demo，支持候选生成、规则打分排序和最佳文案返回，具备工程落地能力。
-
+* Build DPO v2 from model-generated candidates.
+* Add LLM-as-Judge preference labeling.
+* Add human preference evaluation.
+* Support multiple copywriting styles and business constraints.

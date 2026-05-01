@@ -5,6 +5,7 @@ do_train: true
 finetuning_type: lora
 lora_target: all
 dataset: adgen_dpo
+dataset_dir: data
 template: qwen
 cutoff_len: 1024
 max_samples: 5000

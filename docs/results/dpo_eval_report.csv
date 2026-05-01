@@ -1,0 +1,2 @@
+system,num_samples,avg_coverage,avg_forbidden_count,avg_repetition_ratio,avg_length,avg_total_score
+dpo,269,0.8766,0.0,0.0215,60.2119,3.0177
