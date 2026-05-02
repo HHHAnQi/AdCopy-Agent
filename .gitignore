@@ -59,3 +59,9 @@ hf_cache/
 outputs/eval_reports/*.csv
 outputs/eval_reports/*.json
 outputs/eval_reports/*.jsonl
+
+# Local cloud backup
+cloud_backup/
+
+# DPO v2 intermediate outputs
+outputs/v2/
