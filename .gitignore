@@ -65,3 +65,6 @@ cloud_backup/
 
 # DPO v2 intermediate outputs
 outputs/v2/
+
+# Agent runtime outputs
+outputs/agent/

@@ -1,0 +1,724 @@
+{
+  "input": "商品属性：类型=裤；版型=显瘦；颜色=黑色；风格=通勤；图案=条纹；裤长=九分裤；裤腰型=高腰；裤款式=直筒。",
+  "attributes": {
+    "类型": "裤",
+    "版型": "显瘦",
+    "颜色": "黑色",
+    "风格": "通勤",
+    "图案": "条纹",
+    "裤长": "九分裤",
+    "裤腰型": "高腰",
+    "裤款式": "直筒"
+  },
+  "final_copy": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+  "final_report": {
+    "final_candidate_id": "model_cand_2_rewrite",
+    "final_copy": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+    "combined_score": 3.449415,
+    "rule_metrics": {
+      "coverage": 1.0,
+      "forbidden_count": 0,
+      "forbidden_words": [],
+      "conflicts": [],
+      "conflict_count": 0,
+      "repetition_ratio": 0.0093,
+      "length": 110,
+      "length_score": 1.0,
+      "total_score": 3.4931
+    },
+    "judge_scores": {
+      "attribute_coverage": 4,
+      "factual_consistency": 5,
+      "naturalness": 5,
+      "attractiveness": 5,
+      "compliance": 5,
+      "total": 24,
+      "issues": [],
+      "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+      "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+    },
+    "issues": [],
+    "source": "llm_rewrite"
+  },
+  "candidates": [
+    {
+      "candidate_id": "model_cand_1",
+      "text": "修身直筒的版型设计，加上九分裤型设计，上身遮肉效果极佳，轻松打造笔直修长双腿。高腰的设计，拉长身材比例，轻松穿出大长腿。经典的黑白条纹，百搭不过时，时尚又显瘦。通勤休闲两不误。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 0.875,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [],
+        "conflict_count": 0,
+        "repetition_ratio": 0.0133,
+        "length": 77,
+        "length_score": 1.0,
+        "total_score": 3.2088
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案符合产品属性，没有出现虚假信息，语言流畅自然，具有吸引力，且无违规之处。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案符合产品属性，没有出现虚假信息，语言流畅自然，具有吸引力，且无违规之处。\"\n}"
+      },
+      "issues": [
+        "missing_attributes: 颜色=黑色",
+        "unsupported_color_description: input_color=黑色, phrase=黑白"
+      ],
+      "combined_score": 3.2431
+    },
+    {
+      "candidate_id": "model_cand_2",
+      "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 1.0,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [],
+        "conflict_count": 0,
+        "repetition_ratio": 0.0093,
+        "length": 110,
+        "length_score": 1.0,
+        "total_score": 3.4931
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+      },
+      "issues": [],
+      "combined_score": 3.4444150000000002
+    },
+    {
+      "candidate_id": "model_cand_3",
+      "text": "九分长度的直筒版型休闲裤，穿着舒适又方便活动，而且对腿型没有严格的要求。黑色的色调百搭时尚，适合搭配多种上衣，是通勤必备的单品之一。高腰的设计拉伸了身高比例，更加显瘦，修身效果更好。加上竖条纹的设计，丰富了整体的层次感和立体感，让裤子更加时尚精致。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 0.875,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [
+          "类型冲突: 输入=裤, 文案出现=上衣"
+        ],
+        "conflict_count": 1,
+        "repetition_ratio": 0.0091,
+        "length": 112,
+        "length_score": 1.0,
+        "total_score": 2.7119
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。\"\n}"
+      },
+      "issues": [
+        "missing_attributes: 裤长=九分裤"
+      ],
+      "combined_score": 2.971065
+    },
+    {
+      "candidate_id": "model_cand_4",
+      "text": "这款九分裤采用经典的直筒版型，配合黑色的裤身，更添一丝干练帅气气息。而且在裤腿融入白色条纹装饰，与黑色裤身形成鲜明对比，丰富视觉效果，增添活力与运动感。搭配高腰设计，提高腰线，优化身材比例。适合各种通勤场合穿着，修身遮肉，展现女性自信魅力。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 0.875,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [
+          "颜色冲突: 输入=黑色, 文案出现=白色"
+        ],
+        "conflict_count": 1,
+        "repetition_ratio": 0.0,
+        "length": 107,
+        "length_score": 1.0,
+        "total_score": 2.7188
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。\"\n}"
+      },
+      "issues": [
+        "missing_attributes: 版型=显瘦",
+        "unsupported_color_description: input_color=黑色, phrase=白色"
+      ],
+      "combined_score": 2.9775899999999997
+    },
+    {
+      "candidate_id": "model_cand_2_rewrite",
+      "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+      "source": "llm_rewrite",
+      "rule_metrics": {
+        "coverage": 1.0,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [],
+        "conflict_count": 0,
+        "repetition_ratio": 0.0093,
+        "length": 110,
+        "length_score": 1.0,
+        "total_score": 3.4931
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+      },
+      "issues": [],
+      "combined_score": 3.449415
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "thought": "当前还没有解析商品属性，需要先感知输入并提取关键属性。",
+      "action": "parse_attributes",
+      "action_input": {},
+      "observation": {
+        "message": "parsed attributes",
+        "attributes": {
+          "类型": "裤",
+          "版型": "显瘦",
+          "颜色": "黑色",
+          "风格": "通勤",
+          "图案": "条纹",
+          "裤长": "九分裤",
+          "裤腰型": "高腰",
+          "裤款式": "直筒"
+        }
+      }
+    },
+    {
+      "step": 2,
+      "thought": "当前还没有候选文案，需要先调用生成工具生成多个候选。",
+      "action": "generate_candidates",
+      "action_input": {
+        "num_candidates": 4
+      },
+      "observation": {
+        "message": "generated 4 candidates by DPO v2 model",
+        "generator_mode": "model",
+        "candidates": [
+          {
+            "candidate_id": "model_cand_1",
+            "text": "修身直筒的版型设计，加上九分裤型设计，上身遮肉效果极佳，轻松打造笔直修长双腿。高腰的设计，拉长身材比例，轻松穿出大长腿。经典的黑白条纹，百搭不过时，时尚又显瘦。通勤休闲两不误。",
+            "source": "dpo_v2_model_generator"
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+            "source": "dpo_v2_model_generator"
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "text": "九分长度的直筒版型休闲裤，穿着舒适又方便活动，而且对腿型没有严格的要求。黑色的色调百搭时尚，适合搭配多种上衣，是通勤必备的单品之一。高腰的设计拉伸了身高比例，更加显瘦，修身效果更好。加上竖条纹的设计，丰富了整体的层次感和立体感，让裤子更加时尚精致。",
+            "source": "dpo_v2_model_generator"
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "text": "这款九分裤采用经典的直筒版型，配合黑色的裤身，更添一丝干练帅气气息。而且在裤腿融入白色条纹装饰，与黑色裤身形成鲜明对比，丰富视觉效果，增添活力与运动感。搭配高腰设计，提高腰线，优化身材比例。适合各种通勤场合穿着，修身遮肉，展现女性自信魅力。",
+            "source": "dpo_v2_model_generator"
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "thought": "当前已有候选文案，但还没有规则评分，需要调用 rule_evaluate 工具观察候选质量。",
+      "action": "rule_evaluate",
+      "action_input": {},
+      "observation": {
+        "message": "evaluated 4 candidates by rule_score",
+        "candidates": [
+          {
+            "candidate_id": "model_cand_1",
+            "text": "修身直筒的版型设计，加上九分裤型设计，上身遮肉效果极佳，轻松打造笔直修长双腿。高腰的设计，拉长身材比例，轻松穿出大长腿。经典的黑白条纹，百搭不过时，时尚又显瘦。通勤休闲两不误。",
+            "rule_metrics": {
+              "coverage": 0.875,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0133,
+              "length": 77,
+              "length_score": 1.0,
+              "total_score": 3.2088
+            }
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0093,
+              "length": 110,
+              "length_score": 1.0,
+              "total_score": 3.4931
+            }
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "text": "九分长度的直筒版型休闲裤，穿着舒适又方便活动，而且对腿型没有严格的要求。黑色的色调百搭时尚，适合搭配多种上衣，是通勤必备的单品之一。高腰的设计拉伸了身高比例，更加显瘦，修身效果更好。加上竖条纹的设计，丰富了整体的层次感和立体感，让裤子更加时尚精致。",
+            "rule_metrics": {
+              "coverage": 0.875,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [
+                "类型冲突: 输入=裤, 文案出现=上衣"
+              ],
+              "conflict_count": 1,
+              "repetition_ratio": 0.0091,
+              "length": 112,
+              "length_score": 1.0,
+              "total_score": 2.7119
+            }
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "text": "这款九分裤采用经典的直筒版型，配合黑色的裤身，更添一丝干练帅气气息。而且在裤腿融入白色条纹装饰，与黑色裤身形成鲜明对比，丰富视觉效果，增添活力与运动感。搭配高腰设计，提高腰线，优化身材比例。适合各种通勤场合穿着，修身遮肉，展现女性自信魅力。",
+            "rule_metrics": {
+              "coverage": 0.875,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [
+                "颜色冲突: 输入=黑色, 文案出现=白色"
+              ],
+              "conflict_count": 1,
+              "repetition_ratio": 0.0,
+              "length": 107,
+              "length_score": 1.0,
+              "total_score": 2.7188
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "thought": "当前已有规则评分，需要诊断候选是否存在属性遗漏、违规词、冲突、过长或过短等问题。",
+      "action": "diagnose_issues",
+      "action_input": {},
+      "observation": {
+        "message": "diagnosed 4 candidates",
+        "diagnosed": [
+          {
+            "candidate_id": "model_cand_1",
+            "issues": [
+              "missing_attributes: 颜色=黑色",
+              "unsupported_color_description: input_color=黑色, phrase=黑白"
+            ]
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "issues": []
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "issues": [
+              "missing_attributes: 裤长=九分裤"
+            ]
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "issues": [
+              "missing_attributes: 版型=显瘦",
+              "unsupported_color_description: input_color=黑色, phrase=白色"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "thought": "当前候选已经完成规则评分和问题诊断，但还需要从语义层面评估属性覆盖、事实一致性、自然度、吸引力和合规性，因此调用 LLM-as-Judge 工具。",
+      "action": "judge_copy",
+      "action_input": {},
+      "observation": {
+        "message": "judged 4 candidates",
+        "judged": [
+          {
+            "candidate_id": "model_cand_1",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案符合产品属性，没有出现虚假信息，语言流畅自然，具有吸引力，且无违规之处。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案符合产品属性，没有出现虚假信息，语言流畅自然，具有吸引力，且无违规之处。\"\n}"
+            }
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+            }
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。\"\n}"
+            }
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，且没有添加额外的未经证实的产品属性。语言流畅自然，富有吸引力，且符合合规要求。\"\n}"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "thought": "当前候选已经评估、诊断并完成必要的 judge，需要选择综合分最高的候选作为当前最佳文案。",
+      "action": "select_best",
+      "action_input": {},
+      "observation": {
+        "message": "selected best candidate",
+        "best": {
+          "candidate_id": "model_cand_2",
+          "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+          "combined_score": 3.4444150000000002,
+          "rule_metrics": {
+            "coverage": 1.0,
+            "forbidden_count": 0,
+            "forbidden_words": [],
+            "conflicts": [],
+            "conflict_count": 0,
+            "repetition_ratio": 0.0093,
+            "length": 110,
+            "length_score": 1.0,
+            "total_score": 3.4931
+          },
+          "judge_scores": {
+            "attribute_coverage": 4,
+            "factual_consistency": 5,
+            "naturalness": 5,
+            "attractiveness": 5,
+            "compliance": 5,
+            "total": 24,
+            "issues": [],
+            "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+            "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+          },
+          "issues": [
+            "demo_force_rewrite: improve copy while preserving attributes"
+          ]
+        }
+      }
+    },
+    {
+      "step": 7,
+      "thought": "当前处于 rewrite demo 模式。虽然最佳候选基本合格，但为了展示 Agent 的自我优化能力，需要调用 rewrite 工具进行一次受约束改写，然后重新评估。",
+      "action": "rewrite_copy",
+      "action_input": {
+        "candidate_id": "model_cand_2",
+        "issues": [
+          "demo_force_rewrite: improve copy while preserving attributes"
+        ]
+      },
+      "observation": {
+        "message": "rewritten best candidate because issues were found",
+        "rewrite_mode": "llm_rewrite",
+        "source_candidate_id": "model_cand_2",
+        "issues": [
+          "demo_force_rewrite: improve copy while preserving attributes"
+        ],
+        "rewrite_error": null,
+        "rewritten": {
+          "candidate_id": "model_cand_2_rewrite",
+          "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+          "source": "llm_rewrite"
+        }
+      }
+    },
+    {
+      "step": 8,
+      "thought": "当前已有候选文案，但还没有规则评分，需要调用 rule_evaluate 工具观察候选质量。",
+      "action": "rule_evaluate",
+      "action_input": {},
+      "observation": {
+        "message": "evaluated 5 candidates by rule_score",
+        "candidates": [
+          {
+            "candidate_id": "model_cand_1",
+            "text": "修身直筒的版型设计，加上九分裤型设计，上身遮肉效果极佳，轻松打造笔直修长双腿。高腰的设计，拉长身材比例，轻松穿出大长腿。经典的黑白条纹，百搭不过时，时尚又显瘦。通勤休闲两不误。",
+            "rule_metrics": {
+              "coverage": 0.875,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0133,
+              "length": 77,
+              "length_score": 1.0,
+              "total_score": 3.2088
+            }
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0093,
+              "length": 110,
+              "length_score": 1.0,
+              "total_score": 3.4931
+            }
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "text": "九分长度的直筒版型休闲裤，穿着舒适又方便活动，而且对腿型没有严格的要求。黑色的色调百搭时尚，适合搭配多种上衣，是通勤必备的单品之一。高腰的设计拉伸了身高比例，更加显瘦，修身效果更好。加上竖条纹的设计，丰富了整体的层次感和立体感，让裤子更加时尚精致。",
+            "rule_metrics": {
+              "coverage": 0.875,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [
+                "类型冲突: 输入=裤, 文案出现=上衣"
+              ],
+              "conflict_count": 1,
+              "repetition_ratio": 0.0091,
+              "length": 112,
+              "length_score": 1.0,
+              "total_score": 2.7119
+            }
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "text": "这款九分裤采用经典的直筒版型，配合黑色的裤身，更添一丝干练帅气气息。而且在裤腿融入白色条纹装饰，与黑色裤身形成鲜明对比，丰富视觉效果，增添活力与运动感。搭配高腰设计，提高腰线，优化身材比例。适合各种通勤场合穿着，修身遮肉，展现女性自信魅力。",
+            "rule_metrics": {
+              "coverage": 0.875,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [
+                "颜色冲突: 输入=黑色, 文案出现=白色"
+              ],
+              "conflict_count": 1,
+              "repetition_ratio": 0.0,
+              "length": 107,
+              "length_score": 1.0,
+              "total_score": 2.7188
+            }
+          },
+          {
+            "candidate_id": "model_cand_2_rewrite",
+            "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0093,
+              "length": 110,
+              "length_score": 1.0,
+              "total_score": 3.4931
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step": 9,
+      "thought": "当前已有规则评分，需要诊断候选是否存在属性遗漏、违规词、冲突、过长或过短等问题。",
+      "action": "diagnose_issues",
+      "action_input": {},
+      "observation": {
+        "message": "diagnosed 5 candidates",
+        "diagnosed": [
+          {
+            "candidate_id": "model_cand_1",
+            "issues": [
+              "missing_attributes: 颜色=黑色",
+              "unsupported_color_description: input_color=黑色, phrase=黑白"
+            ]
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "issues": []
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "issues": [
+              "missing_attributes: 裤长=九分裤"
+            ]
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "issues": [
+              "missing_attributes: 版型=显瘦",
+              "unsupported_color_description: input_color=黑色, phrase=白色"
+            ]
+          },
+          {
+            "candidate_id": "model_cand_2_rewrite",
+            "issues": []
+          }
+        ]
+      }
+    },
+    {
+      "step": 10,
+      "thought": "当前候选已经完成规则评分和问题诊断，但还需要从语义层面评估属性覆盖、事实一致性、自然度、吸引力和合规性，因此调用 LLM-as-Judge 工具。",
+      "action": "judge_copy",
+      "action_input": {},
+      "observation": {
+        "message": "judged 1 candidates",
+        "judged": [
+          {
+            "candidate_id": "model_cand_2_rewrite",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step": 11,
+      "thought": "当前候选已经评估、诊断并完成必要的 judge，需要选择综合分最高的候选作为当前最佳文案。",
+      "action": "select_best",
+      "action_input": {},
+      "observation": {
+        "message": "selected best candidate",
+        "best": {
+          "candidate_id": "model_cand_2_rewrite",
+          "text": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+          "combined_score": 3.449415,
+          "rule_metrics": {
+            "coverage": 1.0,
+            "forbidden_count": 0,
+            "forbidden_words": [],
+            "conflicts": [],
+            "conflict_count": 0,
+            "repetition_ratio": 0.0093,
+            "length": 110,
+            "length_score": 1.0,
+            "total_score": 3.4931
+          },
+          "judge_scores": {
+            "attribute_coverage": 4,
+            "factual_consistency": 5,
+            "naturalness": 5,
+            "attractiveness": 5,
+            "compliance": 5,
+            "total": 24,
+            "issues": [],
+            "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+            "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+          },
+          "issues": []
+        }
+      }
+    },
+    {
+      "step": 12,
+      "thought": "当前最佳候选已经满足主要约束，可以停止并输出最终文案。",
+      "action": "finish",
+      "action_input": {},
+      "observation": {
+        "final_candidate_id": "model_cand_2_rewrite",
+        "final_copy": "这款九分裤采用经典的黑色调，简约大气又不失时尚感。条纹设计个性新颖，打破了整体的单调性。高腰设计提高腰线，修饰腿型更显腿长。直筒版型藏肉显瘦，上身更显利落大方。九分裤长露出纤细脚踝，凸显女性修长双腿。整体款式休闲百搭，是通勤人士的必备单品之一。",
+        "combined_score": 3.449415,
+        "rule_metrics": {
+          "coverage": 1.0,
+          "forbidden_count": 0,
+          "forbidden_words": [],
+          "conflicts": [],
+          "conflict_count": 0,
+          "repetition_ratio": 0.0093,
+          "length": 110,
+          "length_score": 1.0,
+          "total_score": 3.4931
+        },
+        "judge_scores": {
+          "attribute_coverage": 4,
+          "factual_consistency": 5,
+          "naturalness": 5,
+          "attractiveness": 5,
+          "compliance": 5,
+          "total": 24,
+          "issues": [],
+          "comment": "该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+          "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有提供的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+        },
+        "issues": [],
+        "source": "llm_rewrite"
+      }
+    }
+  ]
+}

@@ -1,0 +1,455 @@
+{
+  "input": "商品属性：类型=裙；材质=雪纺；颜色=黑色；风格=优雅；图案=印花。",
+  "attributes": {
+    "类型": "裙",
+    "材质": "雪纺",
+    "颜色": "黑色",
+    "风格": "优雅",
+    "图案": "印花"
+  },
+  "final_copy": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+  "final_report": {
+    "final_candidate_id": "model_cand_2",
+    "final_copy": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+    "combined_score": 3.451,
+    "rule_metrics": {
+      "coverage": 1.0,
+      "forbidden_count": 0,
+      "forbidden_words": [],
+      "conflicts": [],
+      "conflict_count": 0,
+      "repetition_ratio": 0.0,
+      "length": 73,
+      "length_score": 1.0,
+      "total_score": 3.5
+    },
+    "judge_scores": {
+      "attribute_coverage": 4,
+      "factual_consistency": 5,
+      "naturalness": 5,
+      "attractiveness": 5,
+      "compliance": 5,
+      "total": 24,
+      "issues": [],
+      "comment": "该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。",
+      "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。\"\n}"
+    },
+    "issues": [],
+    "source": "dpo_v2_model_generator"
+  },
+  "candidates": [
+    {
+      "candidate_id": "model_cand_1",
+      "text": "这款裙子的面料是轻盈飘逸的雪纺材质，让你在穿着时倍感舒适自在。衣身采用了白色和黑色两种色彩的搭配，打造出丰富的视觉层次感，更显雅致大方。而花朵印花图案的点缀，为整体增添了几分甜美气息，也更加的优雅浪漫。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 1.0,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [
+          "颜色冲突: 输入=黑色, 文案出现=白色"
+        ],
+        "conflict_count": 1,
+        "repetition_ratio": 0.0,
+        "length": 93,
+        "length_score": 1.0,
+        "total_score": 3.0
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案符合要求，覆盖了所有提供的产品属性，没有出现虚假信息，语言流畅自然，具有吸引力且合规。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案符合要求，覆盖了所有提供的产品属性，没有出现虚假信息，语言流畅自然，具有吸引力且合规。\"\n}"
+      },
+      "issues": [
+        "unsupported_color_description: input_color=黑色, phrase=白色"
+      ],
+      "combined_score": 3.176
+    },
+    {
+      "candidate_id": "model_cand_2",
+      "text": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 1.0,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [],
+        "conflict_count": 0,
+        "repetition_ratio": 0.0,
+        "length": 73,
+        "length_score": 1.0,
+        "total_score": 3.5
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。\"\n}"
+      },
+      "issues": [],
+      "combined_score": 3.451
+    },
+    {
+      "candidate_id": "model_cand_3",
+      "text": "这款黑色的雪纺裙，选用优质面料打造，手感舒适亲肤。黑色的底色，彰显女性优雅气质，结合精美的印花图案，打破黑色的单调与沉闷。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 1.0,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [],
+        "conflict_count": 0,
+        "repetition_ratio": 0.0385,
+        "length": 54,
+        "length_score": 0.8425,
+        "total_score": 3.2742
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告语涵盖了所有提供的属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告语涵盖了所有提供的属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+      },
+      "issues": [],
+      "combined_score": 3.3152600000000003
+    },
+    {
+      "candidate_id": "model_cand_4",
+      "text": "这款裙子的亮点在于它的精美印花设计，黑色打底上点缀着繁复的印花图案，非常别致。裙子采用优质雪纺面料制作而成，上身穿着舒适透气，飘逸感十足。整体风格简约大方又不失女性优雅气质。",
+      "source": "dpo_v2_model_generator",
+      "rule_metrics": {
+        "coverage": 1.0,
+        "forbidden_count": 0,
+        "forbidden_words": [],
+        "conflicts": [],
+        "conflict_count": 0,
+        "repetition_ratio": 0.0,
+        "length": 80,
+        "length_score": 1.0,
+        "total_score": 3.5
+      },
+      "judge_scores": {
+        "attribute_coverage": 4,
+        "factual_consistency": 5,
+        "naturalness": 5,
+        "attractiveness": 5,
+        "compliance": 5,
+        "total": 24,
+        "issues": [],
+        "comment": "该广告文案覆盖了所有的产品属性，没有出现不实信息，语言流畅自然，具有吸引力且符合规范。",
+        "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案覆盖了所有的产品属性，没有出现不实信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+      },
+      "issues": [],
+      "combined_score": 3.451
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "thought": "当前还没有解析商品属性，需要先感知输入并提取关键属性。",
+      "action": "parse_attributes",
+      "action_input": {},
+      "observation": {
+        "message": "parsed attributes",
+        "attributes": {
+          "类型": "裙",
+          "材质": "雪纺",
+          "颜色": "黑色",
+          "风格": "优雅",
+          "图案": "印花"
+        }
+      }
+    },
+    {
+      "step": 2,
+      "thought": "当前还没有候选文案，需要先调用生成工具生成多个候选。",
+      "action": "generate_candidates",
+      "action_input": {
+        "num_candidates": 4
+      },
+      "observation": {
+        "message": "generated 4 candidates by DPO v2 model",
+        "generator_mode": "model",
+        "candidates": [
+          {
+            "candidate_id": "model_cand_1",
+            "text": "这款裙子的面料是轻盈飘逸的雪纺材质，让你在穿着时倍感舒适自在。衣身采用了白色和黑色两种色彩的搭配，打造出丰富的视觉层次感，更显雅致大方。而花朵印花图案的点缀，为整体增添了几分甜美气息，也更加的优雅浪漫。",
+            "source": "dpo_v2_model_generator"
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "text": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+            "source": "dpo_v2_model_generator"
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "text": "这款黑色的雪纺裙，选用优质面料打造，手感舒适亲肤。黑色的底色，彰显女性优雅气质，结合精美的印花图案，打破黑色的单调与沉闷。",
+            "source": "dpo_v2_model_generator"
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "text": "这款裙子的亮点在于它的精美印花设计，黑色打底上点缀着繁复的印花图案，非常别致。裙子采用优质雪纺面料制作而成，上身穿着舒适透气，飘逸感十足。整体风格简约大方又不失女性优雅气质。",
+            "source": "dpo_v2_model_generator"
+          }
+        ]
+      }
+    },
+    {
+      "step": 3,
+      "thought": "当前已有候选文案，但还没有规则评分，需要调用 rule_evaluate 工具观察候选质量。",
+      "action": "rule_evaluate",
+      "action_input": {},
+      "observation": {
+        "message": "evaluated 4 candidates by rule_score",
+        "candidates": [
+          {
+            "candidate_id": "model_cand_1",
+            "text": "这款裙子的面料是轻盈飘逸的雪纺材质，让你在穿着时倍感舒适自在。衣身采用了白色和黑色两种色彩的搭配，打造出丰富的视觉层次感，更显雅致大方。而花朵印花图案的点缀，为整体增添了几分甜美气息，也更加的优雅浪漫。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [
+                "颜色冲突: 输入=黑色, 文案出现=白色"
+              ],
+              "conflict_count": 1,
+              "repetition_ratio": 0.0,
+              "length": 93,
+              "length_score": 1.0,
+              "total_score": 3.0
+            }
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "text": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0,
+              "length": 73,
+              "length_score": 1.0,
+              "total_score": 3.5
+            }
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "text": "这款黑色的雪纺裙，选用优质面料打造，手感舒适亲肤。黑色的底色，彰显女性优雅气质，结合精美的印花图案，打破黑色的单调与沉闷。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0385,
+              "length": 54,
+              "length_score": 0.8425,
+              "total_score": 3.2742
+            }
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "text": "这款裙子的亮点在于它的精美印花设计，黑色打底上点缀着繁复的印花图案，非常别致。裙子采用优质雪纺面料制作而成，上身穿着舒适透气，飘逸感十足。整体风格简约大方又不失女性优雅气质。",
+            "rule_metrics": {
+              "coverage": 1.0,
+              "forbidden_count": 0,
+              "forbidden_words": [],
+              "conflicts": [],
+              "conflict_count": 0,
+              "repetition_ratio": 0.0,
+              "length": 80,
+              "length_score": 1.0,
+              "total_score": 3.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step": 4,
+      "thought": "当前已有规则评分，需要诊断候选是否存在属性遗漏、违规词、冲突、过长或过短等问题。",
+      "action": "diagnose_issues",
+      "action_input": {},
+      "observation": {
+        "message": "diagnosed 4 candidates",
+        "diagnosed": [
+          {
+            "candidate_id": "model_cand_1",
+            "issues": [
+              "unsupported_color_description: input_color=黑色, phrase=白色"
+            ]
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "issues": []
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "issues": []
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "issues": []
+          }
+        ]
+      }
+    },
+    {
+      "step": 5,
+      "thought": "当前候选已经完成规则评分和问题诊断，但还需要从语义层面评估属性覆盖、事实一致性、自然度、吸引力和合规性，因此调用 LLM-as-Judge 工具。",
+      "action": "judge_copy",
+      "action_input": {},
+      "observation": {
+        "message": "judged 4 candidates",
+        "judged": [
+          {
+            "candidate_id": "model_cand_1",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案符合要求，覆盖了所有提供的产品属性，没有出现虚假信息，语言流畅自然，具有吸引力且合规。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案符合要求，覆盖了所有提供的产品属性，没有出现虚假信息，语言流畅自然，具有吸引力且合规。\"\n}"
+            }
+          },
+          {
+            "candidate_id": "model_cand_2",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。\"\n}"
+            }
+          },
+          {
+            "candidate_id": "model_cand_3",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告语涵盖了所有提供的属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告语涵盖了所有提供的属性，没有添加虚假信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+            }
+          },
+          {
+            "candidate_id": "model_cand_4",
+            "judge_scores": {
+              "attribute_coverage": 4,
+              "factual_consistency": 5,
+              "naturalness": 5,
+              "attractiveness": 5,
+              "compliance": 5,
+              "total": 24,
+              "issues": [],
+              "comment": "该广告文案覆盖了所有的产品属性，没有出现不实信息，语言流畅自然，具有吸引力且符合规范。",
+              "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案覆盖了所有的产品属性，没有出现不实信息，语言流畅自然，具有吸引力且符合规范。\"\n}"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "step": 6,
+      "thought": "当前候选已经评估、诊断并完成必要的 judge，需要选择综合分最高的候选作为当前最佳文案。",
+      "action": "select_best",
+      "action_input": {},
+      "observation": {
+        "message": "selected best candidate",
+        "best": {
+          "candidate_id": "model_cand_2",
+          "text": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+          "combined_score": 3.451,
+          "rule_metrics": {
+            "coverage": 1.0,
+            "forbidden_count": 0,
+            "forbidden_words": [],
+            "conflicts": [],
+            "conflict_count": 0,
+            "repetition_ratio": 0.0,
+            "length": 73,
+            "length_score": 1.0,
+            "total_score": 3.5
+          },
+          "judge_scores": {
+            "attribute_coverage": 4,
+            "factual_consistency": 5,
+            "naturalness": 5,
+            "attractiveness": 5,
+            "compliance": 5,
+            "total": 24,
+            "issues": [],
+            "comment": "该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。",
+            "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。\"\n}"
+          },
+          "issues": []
+        }
+      }
+    },
+    {
+      "step": 7,
+      "thought": "当前最佳候选已经满足主要约束，可以停止并输出最终文案。",
+      "action": "finish",
+      "action_input": {},
+      "observation": {
+        "final_candidate_id": "model_cand_2",
+        "final_copy": "这款裙子采用了黑色的底色，搭配着精致的花朵印花，既显得优雅大方又不失时尚感。而选用的雪纺面料质地轻盈飘逸，上身舒适，让整体更具浪漫的感觉，彰显出女性优雅的气质。",
+        "combined_score": 3.451,
+        "rule_metrics": {
+          "coverage": 1.0,
+          "forbidden_count": 0,
+          "forbidden_words": [],
+          "conflicts": [],
+          "conflict_count": 0,
+          "repetition_ratio": 0.0,
+          "length": 73,
+          "length_score": 1.0,
+          "total_score": 3.5
+        },
+        "judge_scores": {
+          "attribute_coverage": 4,
+          "factual_consistency": 5,
+          "naturalness": 5,
+          "attractiveness": 5,
+          "compliance": 5,
+          "total": 24,
+          "issues": [],
+          "comment": "该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。",
+          "raw_response": "{\n  \"attribute_coverage\": 4,\n  \"factual_consistency\": 5,\n  \"naturalness\": 5,\n  \"attractiveness\": 5,\n  \"compliance\": 5,\n  \"issues\": [],\n  \"comment\": \"该广告文案涵盖了所有的产品属性，没有添加虚假信息，语言流畅自然，具有吸引力，且符合合规要求。\"\n}"
+        },
+        "issues": [],
+        "source": "dpo_v2_model_generator"
+      }
+    }
+  ]
+}
