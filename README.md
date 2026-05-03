@@ -10,6 +10,10 @@ It starts from supervised fine\-tuning and preference alignment, then further ex
 
 The task is to generate attractive and faithful Chinese e\-commerce advertising copy from structured product attributes\.
 
+## System Architecture
+
+![AdCopy-Agent System Architecture](docs/images/adcopy_agent_architecture.png)
+
 ```text
 AdvertiseGen Dataset
         ↓
@@ -29,9 +33,7 @@ AdCopy-ReAct Agent
         ↓
 Generate → Evaluate → Diagnose → Judge → Rewrite → Select
 ```
-## System Architecture
 
-![AdCopy-Agent System Architecture](docs/images/adcopy_agent_architecture.png)
 
 ## 2\. Main Contributions
 
