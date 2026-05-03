@@ -10,29 +10,28 @@ It starts from supervised fine\-tuning and preference alignment, then further ex
 
 The task is to generate attractive and faithful Chinese e\-commerce advertising copy from structured product attributes\.
 
-#### Example input:
-
 ```text
-商品属性：类型=裙；材质=雪纺；颜色=黑色；风格=优雅；图案=印花。
+AdvertiseGen Dataset
+        ↓
+Data Cleaning & Prompt Construction
+        ↓
+SFT Data / DPO Prompt Pool / Final Test
+        ↓
+Qwen2.5-7B QLoRA SFT
+        ↓
+Rule-based DPO v1
+        ↓
+Model-generated + LLM-as-Judge DPO v2-small
+        ↓
+Base / SFT / DPO / DPO v2 Evaluation
+        ↓
+AdCopy-ReAct Agent
+        ↓
+Generate → Evaluate → Diagnose → Judge → Rewrite → Select
 ```
+## System Architecture
 
-#### Expected output:
-
-这款裙子采用了黑色的底色，搭配精致的印花设计，优雅大方又不失时尚感。雪纺面料轻盈飘逸，穿着舒适自然，轻松展现女性温柔气质。
-
-The system focuses on:
-
-- Attribute coverage
-
-- Factual consistency
-
-- Natural expression
-
-- Marketing attractiveness
-
-- Compliance and avoidance of exaggerated claims
-
-- Automatic evaluation and revision
+![AdCopy-Agent System Architecture](docs/images/adcopy_agent_architecture.png)
 
 ## 2\. Main Contributions
 
@@ -58,30 +57,31 @@ Uses rule\-based evaluation, issue diagnosis, LLM\-as\-Judge, and LLM rewrite to
 
 Follows a ReAct\-style Thought → Action → Observation loop\.
 
-## 3\. System Architecture
+## 3\. Example
+
+#### Example input:
 
 ```text
-AdvertiseGen Dataset
-        ↓
-Data Cleaning & Prompt Construction
-        ↓
-SFT Data / DPO Prompt Pool / Final Test
-        ↓
-Qwen2.5-7B QLoRA SFT
-        ↓
-Rule-based DPO v1
-        ↓
-Model-generated + LLM-as-Judge DPO v2-small
-        ↓
-Base / SFT / DPO / DPO v2 Evaluation
-        ↓
-AdCopy-ReAct Agent
-        ↓
-Generate → Evaluate → Diagnose → Judge → Rewrite → Select
+商品属性：类型=裙；材质=雪纺；颜色=黑色；风格=优雅；图案=印花。
 ```
-## System Architecture
 
-![AdCopy-Agent System Architecture](docs/images/adcopy_agent_architecture.png)
+#### Expected output:
+
+这款裙子采用了黑色的底色，搭配精致的印花设计，优雅大方又不失时尚感。雪纺面料轻盈飘逸，穿着舒适自然，轻松展现女性温柔气质。
+
+The system focuses on:
+
+- Attribute coverage
+
+- Factual consistency
+
+- Natural expression
+
+- Marketing attractiveness
+
+- Compliance and avoidance of exaggerated claims
+
+- Automatic evaluation and revision
 
 ## 4\. Data Pipeline
 
