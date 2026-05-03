@@ -79,6 +79,9 @@ AdCopy-ReAct Agent
         ↓
 Generate → Evaluate → Diagnose → Judge → Rewrite → Select
 ```
+## System Architecture
+
+![AdCopy-Agent System Architecture](docs/images/adcopy_agent_architecture.png)
 
 ## 4\. Data Pipeline
 
