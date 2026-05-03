@@ -220,6 +220,25 @@ Final test size: 269\.
 
 - All post\-trained models reduce forbidden expressions to zero\.
 
+### Manual Preference Audit
+
+To complement automatic rule-based evaluation, we conducted a 50-sample manual preference audit comparing SFT and DPO v2-small outputs.
+
+| Winner | Count | Rate |
+|---|---:|---:|
+| SFT | 9 | 18.0% |
+| DPO v2-small | 28 | 56.0% |
+| Tie | 13 | 26.0% |
+
+DPO v2-small was preferred over SFT in **56.0%** of cases and was at least tied in **82.0%** of cases, providing additional human preference evidence for the DPO v2-small alignment strategy.
+
+The full audit sheet and summary are available in:
+
+```text
+docs/results/manual_preference_audit.csv
+docs/results/manual_preference_audit_summary.md
+```
+
 ## 10\. AdCopy\-ReAct Agent v3
 
 The project further extends the post\-trained model into a ReAct\-style tool\-using agent\.
